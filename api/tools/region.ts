@@ -1,7 +1,7 @@
 import { StanReginCdApiResponse } from "../types/region.js";
 
 export const getStanRegionCodeList = async (location: string, pageNo: number = 1): Promise<StanReginCdApiResponse> => {
-  const params = `ServiceKey=${process.env.DATA_PORTAL_API_KEY}&numOfRows=1000&pageNo=${pageNo}&type=json&ocatadd_nm=${encodeURIComponent(location)}`;
+  const params = `ServiceKey=${process.env.DATA_PORTAL_API_KEY}&numOfRows=1000&pageNo=${pageNo}&type=json&locatadd_nm=${encodeURIComponent(location)}`;
   const response = await fetch(`http://apis.data.go.kr/1741000/StanReginCd/getStanReginCdList?${params}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
